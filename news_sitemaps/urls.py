@@ -1,16 +1,16 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import *
 
 from news_sitemaps import registry
+from .views import *
 
-
-urlpatterns = patterns('news_sitemaps.views',
+urlpatterns = [
     url(r'^index\.xml$',
-        'index',
+        index,
         {'sitemaps': registry},
         name='news_sitemaps_index'),
 
     url(r'^(?P<section>.+)\.xml',
-        'news_sitemap',
+        news_sitemap,
         {'sitemaps': registry},
         name='news_sitemaps_sitemap'),
-)
+]
