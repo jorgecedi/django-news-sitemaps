@@ -1,1 +1,1 @@
-include *.xml
+recursive-include news_sitemaps/templates *
